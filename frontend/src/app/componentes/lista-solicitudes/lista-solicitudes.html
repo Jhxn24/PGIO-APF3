@@ -1,0 +1,28 @@
+<div class="container-lista">
+  <h2>Mis Solicitudes</h2>
+
+  <table *ngIf="listaSolicitudes.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Fecha</th>
+        <th>Título</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of listaSolicitudes">
+        <td>{{ solicitud.id }}</td>
+        <td>{{ solicitud.fecha }}</td>
+        <td>
+          <strong>{{ solicitud.titulo }}</strong>
+        </td>
+        <td>{{ solicitud.descripcion }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="mensaje-vacio" *ngIf="listaSolicitudes.length === 0">
+    <p>Aún no has creado ninguna solicitud.</p>
+  </div>
+</div>

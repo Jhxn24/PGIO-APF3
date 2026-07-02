@@ -1,0 +1,10 @@
+<div class="container-login">
+  <h2>Iniciar Sesion</h2>
+  <form [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
+    <input type="text" placeholder="Ingresa tu correo electrónico" formControlName="correoA" />
+
+    <input type="password" placeholder="Ingresa tu contraseña" formControlName="passwordA" />
+
+    <button type="submit" [disabled]="formularioLogin.invalid">Ingresar</button>
+  </form>
+</div>

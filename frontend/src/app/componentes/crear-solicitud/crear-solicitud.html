@@ -1,0 +1,13 @@
+<div class="container-crearSolicitud">
+  <h2>Crear Nueva solicitud</h2>
+  <form [formGroup]="formularioSolicitud" (ngSubmit)="enviarSolicitud()">
+    <label for="titulo">Título de la Solicitud</label>
+    <input type="text" formControlName="titulo" placeholder="Ejemp: Acceso a la base de datos" />
+    <label for="descripcion">Descripción</label>
+    <textarea
+      formControlName="descripcion"
+      placeholder="Detalla aquí el motivo de tu solicitud..."
+    ></textarea>
+    <button type="submit" [disabled]="formularioSolicitud.invalid">Enviar</button>
+  </form>
+</div>

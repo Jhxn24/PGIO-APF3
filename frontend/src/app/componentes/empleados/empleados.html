@@ -1,0 +1,44 @@
+<div class="container-empleados">
+  <h2>Registrar Empleados</h2>
+  <form [formGroup]="formularioEmpleados" (ngSubmit)="registrar()">
+    <label for="nombres">Nombre y apellidos completos</label>
+    <input type="text" formControlName="nombrecompleto" placeholder="Ejemp: Juan Rosales Vilchez" />
+    <label form="departamento">Departamento</label>
+    <input type="text" formControlName="departamento" placeholder="Ejemp:Tecnologías y Servicios" />
+    <label for="cargo">Cargo</label>
+    <input formControlName="cargo" type="text" placeholder="ejemp:Redes" />
+    <label for="correo">Correo Electrónico</label>
+    <input formControlName="correo" type="text" placeholder="juan@pgio.com" />
+    <label for="telefono">Telefono</label>
+    <input formControlName="telefono" type="text" placeholder="987654321" />
+    <button type="submit" [disabled]="formularioEmpleados.invalid">Registrar</button>
+  </form>
+</div>
+
+<div class="container-lista">
+  <h3>Lista de Empleados Registrados</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre Completo</th>
+        <th>Departamento</th>
+        <th>Cargo</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let empleado of listaEmpleados">
+        <td>
+          <strong>{{ empleado.id }}</strong>
+        </td>
+        <td>{{ empleado.nombrecompleto }}</td>
+        <td>{{ empleado.departamento }}</td>
+        <td>{{ empleado.cargo }}</td>
+        <td>{{ empleado.correo }}</td>
+        <td>{{ empleado.telefono }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
